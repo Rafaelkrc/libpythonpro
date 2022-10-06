@@ -7,4 +7,5 @@ Link para o curso [PythonPro](https://plataforma.dev.pro.br/)
 
 Tópicos a serem abordados:
  1. Git
-2. Virtualenv
+ 2. Virtualenv
+ 3. Pip
