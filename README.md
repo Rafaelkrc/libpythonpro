@@ -24,3 +24,5 @@ Tópicos a serem abordados:
  1. Git
  2. Virtualenvdist 
  3. Pip
+
+teste
