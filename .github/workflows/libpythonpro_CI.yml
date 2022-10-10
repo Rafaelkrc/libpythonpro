@@ -4,8 +4,6 @@ on: [ push ]
 
 jobs:
   build:
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     runs-on: windows-latest
 
@@ -14,20 +12,11 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.10
+          python-version: 3.10.7
           architecture: x64
       - name: Instalar dependências
         run: |
           pip install -r requirements-dev.txt
       - name: Rodar flake8
-        uses: py-actions/flake8@v1
-        with:
-          checkName: 'flake8_py3'
-      - name: Rodar Testes Automáticos
         run: |
-          pytest --cov=libpythonpro
-      - name: Relatório Coverage
-        env:
-          CODECOV_TOKEN: ${{ c6aa616d-2a0f-4884-9e60-e8e110e7835f }}
-        run: |
-          codecov
+          flake8
