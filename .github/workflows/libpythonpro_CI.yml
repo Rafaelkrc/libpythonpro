@@ -20,4 +20,11 @@ jobs:
       - name: Rodar flake8
         run: |
           flake8
-          pytest libpythonpro
+      - name: Rodar Testes Automaticos
+        run: |
+          pytest libpythonpro --cov=libpythonpro
+      - name: Relatorio Coverage
+        env:
+          CODECOV_TOKEN: 'c6aa616d-2a0f-4884-9e60-e8e110e7835f'
+        RUN: |
+          codecov
