@@ -18,13 +18,14 @@ jobs:
         run: |
           pip install -r requirements-dev.txt
       - name: Rodar flake8
+        uses: py-actions/flake8@v1
+        with:
+          checkName: 'flake8_py3'
+      - name: Rodar Testes Automáticos
         run: |
-          flake8
-      - name: Rodar Testes Automaticos
-        run: |
-          pytest libpythonpro --cov=libpythonpro
-      - name: Relatorio Coverage
+          pytest --cov=libpythonpro
+      - name: Relatório Coverage
         env:
           CODECOV_TOKEN: 'c6aa616d-2a0f-4884-9e60-e8e110e7835f'
-        RUN: |
+        run: |
           codecov
