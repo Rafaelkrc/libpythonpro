@@ -4,6 +4,7 @@ Modulo de aprendizangem de construçao de projeto Python no curso Pytools
 Nesse curso é ensinado como contribuir com projetos de código aberto.
 
 Link para o curso [PythonPro](https://plataforma.dev.pro.br/)
+[![codecov](https://codecov.io/gh/Rafaelkrc/libpythonpro/branch/main/graph/badge.svg?token=CWOXUDPPZT)](https://codecov.io/gh/Rafaelkrc/libpythonpro)
 
 Suportada versão 3 de Python
 
