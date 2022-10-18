@@ -16,15 +16,18 @@ jobs:
           architecture: x64
       - name: Instalar dependências
         run: |
-          pip install -r requirements-dev.txt
+          python -m pip install --upgrade pip
+          pip install -q pipenv codecov
+          pipenv install -q pytest-cov
+          pipenv sync --dev
       - name: Rodar flake8
         run: |
-            flake8
+          pipenv run flake8
       - name: Rodar Testes Automáticos
         run: |
-          pytest --cov=libpythonpro
+          pipenv run pytest libpythonpro --cov=libpythonpro
       - name: Relatório Coverage
         env:
           CODECOV_TOKEN: 'c6aa616d-2a0f-4884-9e60-e8e110e7835f'
         run: |
-          codecov
+          pipenv run codecov
